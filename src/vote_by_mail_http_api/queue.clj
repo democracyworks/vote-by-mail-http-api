@@ -23,7 +23,7 @@
                               connection "" "vote-by-mail-works.voter.apply"
                               (config [:rabbitmq :queues
                                        "vote-by-mail-works.voter.apply"])
-                              5000
+                              (config [:voter-apply-timeout])
                               channels/voter-apply)]
           outgoing-events []]
 
