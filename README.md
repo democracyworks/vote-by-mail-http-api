@@ -1,10 +1,8 @@
 # vote-by-mail-http-api
 
-TODO: Add description
+HTTP API gateway for vote-by-mail services.
 
 ## Configuration
-
-TODO: Add vote-by-mail-http-api specific configuration.
 
 * ALLOWED_ORIGINS
     * This env var controls the cross-origin resource sharing (CORS) settings.
@@ -20,7 +18,12 @@ TODO: Add vote-by-mail-http-api specific configuration.
 
 ## Usage
 
-TODO: Add usage
+To initiate the vote-by-mail application process, send a POST request to the
+`/applications` endpoint with a body like this:
+
+```
+{:form :ca_absentee, :voter {:first-name "Wes", :last-name "Morgan"}}
+```
 
 ## Running
 
@@ -59,7 +62,7 @@ automate building and deploying to CoreOS.
 
 ## License
 
-Copyright © 2015 Democracy Works, Inc.
+Copyright © 2016 Democracy Works, Inc.
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.

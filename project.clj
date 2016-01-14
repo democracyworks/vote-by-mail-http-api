@@ -1,5 +1,5 @@
 (defproject vote-by-mail-http-api "0.1.0-SNAPSHOT"
-  :description "FIXME: HTTP API gateway for ..."
+  :description "HTTP API gateway for vote by mail services"
   :url "https://github.com/democracyworks/vote-by-mail-http-api"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
