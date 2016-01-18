@@ -10,4 +10,4 @@ RUN lein deps
 COPY . /usr/src/vote-by-mail-http-api
 
 RUN lein test
-RUN lein immutant war --name vote-by-mail-http-api --destination target --nrepl-port=11111 --nrepl-start --nrepl-host=0.0.0.0
+RUN lein immutant war --name vote-by-mail-http-api --destination target --nrepl-port=11833 --nrepl-start --nrepl-host=0.0.0.0
