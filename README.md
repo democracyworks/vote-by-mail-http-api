@@ -25,6 +25,12 @@ To initiate the vote-by-mail application process, send a POST request to the
 {:form :ca_absentee, :voter {:first-name "Wes", :last-name "Morgan"}}
 ```
 
+If successful, the response will look like this:
+
+```
+{:form-uri "https://foo.bar/Wes_Morgan_ca_absentee.pdf"}
+```
+
 ## Running
 
 ### With docker-compose
