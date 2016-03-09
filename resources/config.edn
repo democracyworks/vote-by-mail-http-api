@@ -5,5 +5,5 @@
                          :port #resource-config/edn #resource-config/env "RABBITMQ_PORT_5672_TCP_PORT"}
             :queues {"vote-by-mail-http-api.ok" {:exclusive false :durable true :auto-delete false}
                      "vote-by-mail-works.voter.apply" {:exclusive false :durable true :auto-delete false}}}
- :voter-apply-timeout 10000 ; milliseconds
+ :voter-apply-timeout 20000 ; milliseconds
  }
