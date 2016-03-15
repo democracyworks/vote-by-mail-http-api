@@ -30,7 +30,8 @@
                                                        "text/plain"])]
      ["/ping" {:get [:ping ping]}]
      ["/applications" {:post [:post-application (bifrost/interceptor
-                                                 channels/voter-apply)]}]]]])
+                                                 channels/voter-apply
+                                                 (config [:voter-apply-timeout]))]}]]]])
 
 (defn service []
   {::env :prod
