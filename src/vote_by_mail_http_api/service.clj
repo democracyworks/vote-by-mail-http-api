@@ -31,7 +31,7 @@
      ["/ping" {:get [:ping ping]}]
      ["/applications" {:post [:post-application (bifrost/interceptor
                                                  channels/voter-apply
-                                                 (config [:voter-apply-timeout]))]}]]]])
+                                                 (config [:timeouts :voter-apply]))]}]]]])
 
 (defn service []
   {::env :prod
