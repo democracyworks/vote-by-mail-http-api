@@ -14,7 +14,7 @@
                      [{:queue "vote-by-mail-works.voter.apply"
                        :channel vote-by-mail-http-api.channels/voter-apply
                        :response true
-                       :timeout 20000}]}}
- :timeouts {:voter-apply 20000 ; milliseconds
+                       :timeout 40000}]}}
+ :timeouts {:voter-apply 40000 ; milliseconds
             }
 }
