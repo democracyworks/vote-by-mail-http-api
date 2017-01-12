@@ -3,8 +3,18 @@
           :allowed-origins #resource-config/edn #resource-config/env "ALLOWED_ORIGINS"}
  :rabbitmq {:connection {:host #resource-config/env "RABBITMQ_PORT_5672_TCP_ADDR"
                          :port #resource-config/edn #resource-config/env "RABBITMQ_PORT_5672_TCP_PORT"}
-            :queues {"vote-by-mail-http-api.ok" {:exclusive false :durable true :auto-delete false}
-                     "vote-by-mail-works.voter.apply" {:exclusive false :durable true :auto-delete false}}}
- :timeouts {:voter-apply 20000 ; milliseconds
+            :kehaar {:incoming-services
+                     [{:queue "vote-by-mail-http-api.ok"
+                       :f vote-by-mail-http-api.handlers/ok
+                       :response true
+                       :threads 2
+                       :prefetch-limit 2}]
+
+                     :external-services
+                     [{:queue "vote-by-mail-works.voter.apply"
+                       :channel vote-by-mail-http-api.channels/voter-apply
+                       :response true
+                       :timeout 40000}]}}
+ :timeouts {:voter-apply 40000 ; milliseconds
             }
 }
