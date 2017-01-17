@@ -14,4 +14,4 @@ COPY . /usr/src/vote-by-mail-http-api
 RUN lein with-profiles $env,test test
 RUN lein with-profile $env uberjar
 
-CMD ["java", "-jar", "target/vote-by-mail-http-api.jar"]
+CMD ["java", "-XX:+UseG1GC", "-jar", "target/vote-by-mail-http-api.jar"]
